@@ -43,6 +43,8 @@ port number -- 9090
       useradd -m -s /bin/bash prometheus
       passwd -d prometheus
       vi /etc/sudoers.d/90-cloud-init-users
+      cd /etc/systemd
+      chown -R prometheus:prometheus system
       su - prometheus
       wget https://github.com/prometheus/prometheus/releases/download/v2.33.3/prometheus-2.33.3.linux-amd64.tar.gz
       ls
@@ -78,6 +80,8 @@ WantedBy=multi-user.target
 
 --> configure prometheus.yml file to get connection 
    between prometheus and node exporter
+   
+   /home/prometheus/prometheus/prometheus.yml
 
  ---> give job name and targets
      if it in same give machine "local" or different machine add private ip of node exporter
