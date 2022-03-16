@@ -73,10 +73,10 @@ ExecStart=/home/prometheus/prometheus/prometheus \
 [Install]
 WantedBy=multi-user.target
 
-     systemctl daemon-reload
-     systemctl enable prometheus
-     systemctl start prometheus
-     systemctl status prometheus
+ sudo systemctl daemon-reload
+ sudo systemctl enable prometheus
+ sudo systemctl start prometheus
+ sudo systemctl status prometheus
 
 --> configure prometheus.yml file to get connection 
    between prometheus and node exporter
